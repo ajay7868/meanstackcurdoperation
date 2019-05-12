@@ -1,0 +1,27 @@
+<div class="col-md-6"style="margin:0 auto" >
+  <h2 class="text-center">Add User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email" (ngModelChange)="onChange($event)">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input formControlName="name" placeholder="enter your Name" name="name" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input formControlName="phone" placeholder="enter your phone no" name="phone" class="form-control" id="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="address">address:</label>
+      <textarea formControlName="address" placeholder="enter your address" name="address" class="form-control" id="address">
+        </textarea>
+    </div>
+
+    <button class="btn btn-success"  [disabled]="!validEmail">Submit</button>
+  </form>
+</div>
